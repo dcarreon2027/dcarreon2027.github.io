@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap">
+    <title>Potens Academy</title>
+    <style>
+        body {
+            overflow-x: hidden;
+            background-color: #b3b0af;
+            background: linear-gradient(rgba(117, 102, 93, 0.3), rgba(92, 91, 90, 0.3)), url('bg.jpg');
+            font-family: 'Quicksand', sans-serif;
+        }
+
+        nav {
+            background-color: #483c34;
+            border: solid 4px #282117;
+        }
+
+        .navbar-brand img {
+            max-width: 30px;
+            max-height: 30px;
+            margin-right: 10px;
+        }
+
+        .navbar-toggler {
+            border-color: #fff;
+        }
+
+        .navbar-nav {
+            text-align: center;
+        }
+
+        .navbar-nav .nav-item {
+            margin-right: 10px;
+            text-align: center;
+        }
+
+        .navbar-nav .nav-link {
+            color: #fff !important;
+        }
+
+        .navbar-nav .nav-link:hover {
+            color: #fff !important;
+        }
+
+        .banner {
+            position: relative;
+            height: 300px;
+            background-image: url('englishbg.png');
+            background-size: cover;
+            background-position: top;
+            text-align: center;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .banner h2 {
+            font-size: 3rem;
+            margin-bottom: 10px;
+            font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+        }
+
+        .col-md-10 p {
+            font-size: 18px;
+            line-height: 1.6;
+            font-weight: bold;
+        }
+
+        .col-xl-4 {
+            position: relative;
+            padding: 20px;
+        }
+
+        .form-control {
+            border: 1px solid #fff;
+        }
+
+        .form-control::placeholder {
+            color: #fff;
+        }
+
+        .image-container {
+            overflow: hidden;
+            position: relative;
+            display: inline-block;
+            height: 400px;
+            width: 100%;
+        }
+
+        .image-wrapper {
+            position: relative;
+        }
+
+        .image-transition {
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .transition-up .image-transition {
+            transform: translateY(-100%);
+        }
+
+        .image-container .description {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            transition: opacity 0.3s ease-in-out;
+        }
+
+        .mt-3 {
+            margin-left: 2%;
+            margin-right: 2%;
+        }
+
+        .upev {
+            margin-left: 2%;
+        }
+
+
+        ul {
+            list-style-type: none;
+        }
+
+        /* Footer */
+
+        body, html {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+
+        footer {
+            background-color: #483c34;
+            color: #ffffff;
+            padding: 20px 0;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        }
+
+        .wrapper {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .footer-inner {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100vw;
+        }
+
+        .f-h-1,
+        .f-h-2 {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .f-h-1 a,
+        .f-h-2 a {
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s ease-in-out;
+        }
+
+        .f-h-1 a:hover,
+        .f-h-2 a:hover {
+            color: #918977;
+        }
+
+        .bottom {
+            margin-top: 20px;
+            font-size: 14px;
+            text-align: center;
+        }
+
+        .social-icons {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: space-around;
+        }
+
+        .logo-social-container {
+            list-style: none;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo-item img {
+            max-width: 100%;
+        }
+
+        .social-item img {
+            max-width: 45px;
+            margin-right: 10px;
+        }
+
+        /*english*/
+
+        .form-control {
+            border: 1px solid #483c34;
+            color: #333;
+        }
+
+        .row.justify-content-around {
+            margin-top: 20px;
+        }
+
+        .col-sm-4 {
+            margin-bottom: 20px;
+        }
+
+        .card {
+            border: 2px solid #483c34;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .card-header {
+            background-color: #483c34;
+            border: none;
+        }
+
+        .card-header button {
+            color: #fff;
+        }
+
+        .card-body {
+            background-color: #f8f9fa;
+        }
+        .card-header button:hover {
+        color: #837474 !important;
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <nav class="navbar navbar-dark navbar-expand-lg">
+        <div class="container-fluid">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <img src="potens.png" alt="logo" height="150">
+                </li>
+            </ul>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample01"
+                aria-controls="navbarsExample01" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarsExample01">
+                <ul class="navbar-nav ms-auto mb-2">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">HOME</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">ABOUT</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="academics.html">ACADEMICS</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="extracurriculars.html">EXTRA-CURRICULARS</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contacts.html">CONTACT US</a>
+                    </li>
+                </ul>
+                <form role="search">
+                    <input class="form-control" type="search" placeholder="Search" aria-label="Search">
+                </form>                
+            </div>
+        </div>
+    </nav>
+
+    <div class="banner">
+        <h2 class="py-5" style="text-shadow: 2px 2px 8px #000;">ENGLISH: Sonnets</h2>
+    </div>    
+     
+    <div>
+        </div>
+        <div class="row justify-content-around" style="text-align: center;">
+            <div class="col-sm-4">
+                <h1>Lost in Cupid's Web</h1>
+                <div class="card">
+                    <div class="card-body">
+                        <p class="card-text">
+                            Welcome to the exciting world of English, where students start on an enthralling journey of literary discovery and 
+                            linguistic mastery. In this course, students will dig into the rich tapestry of literature strengthening critical 
+                            thinking skills and honing communication talents. Our curriculum is meticulously designed to build a profound 
+                            appreciation for many literary genres, develop critical abilities, and allow students to successfully express 
+                            themselves.
+                        </p>
+                        <p class="card-text">
+                            By the end of this course, students will not only have a greater understanding for the power of language and 
+                            literature, but they will also have the skills and confidence to navigate the world as successful communicators and 
+                            critical thinkers. Join us on this literary journey, where every page is an opportunity for intellectual progress 
+                            and self-expression.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <h1>FEATURED WORKS</h1>
+                <div class="card">
+                    <div class="card-header">
+                        <button class="btn btn-link" data-bs-toggle="collapse" data-bs-target="#sonnet1" aria-expanded="false">
+                            Bewildered Hearts by Geoshua Sorio
+                        </button>
+                    </div>
+
+                    <div class="collapse" id="sonnet1">
+                        <div class="card-body">
+                            <p class="card-text">
+                                Cupid's Realm where love resides;
+                                <br>
+                                Bewildered, I stand, lost in a sea of affection.
+                                <br>
+                                Confusion comes to light with great tension,
+                                <br>
+                                Love ebbs and flows from passioned tides.
+                                <br>
+                                Why can't we, for once, express what makes us glide?
+                                <br>
+                                Say what we feel and run after the direction, 
+                                <br>
+                                Let our hearts connect to perfection.
+                                <br>
+                                Take a chance with me and stay by my side.
+                                <br>
+                                <br>
+                                Transcending hearts, fading like footsteps in the sand.
+                                <br>
+                                I know you better than the moon, but you forgot my birthday’s in June.
+                                <br>
+                                Call me a hopeless romantic, clinging on to a single thread of hope. 
+                                <br>
+                                My heart sewn on my sleeve, longing to understand.
+                                <br>
+                                Thought it was everlasting love; then I was alone in the moon.
+                                <br>
+                                Felt like an invisible person in your globe.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="card-header">
+                        <button class="btn btn-link" data-bs-toggle="collapse" data-bs-target="#sonnet2" aria-expanded="false">
+                            Ethereal Love by Geoshua Sorio
+                        </button>
+                    </div>
+
+                    <div class="collapse" id="sonnet2">
+                        <div class="card-body">
+                            <p class="card-text">
+                                Your gaze transported me to a past life;
+                                <br>
+                                A glance, a touch, a walk through the park.
+                                <br>
+                                Across the multiverse, you were there through my strife;
+                                <br>
+                                Suddenly my life lit up and you were the spark.
+                                <br>
+                                <br>
+                                Through my wonders, it felt lonely and cold.
+                                <br>
+                                Like dying embers and a withered daisy.
+                                <br>
+                                You warmed me up like sunshine's gold,
+                                <br>
+                                On a stressful day when I feel hazy.
+                                <br>
+                                <br>
+                                Love is a choice one has to make, 
+                                <br>
+                                But know that what I feel for you is true.
+                                <br>
+                                Even with imperfections, mistakes, and heartache,
+                                <br>
+                                The only person I would choose through thick and thin is you.
+                                <br>
+                                <br>
+                                Every day, I find peace in your presence.
+                                <br>
+                                Like daylight’s luminescence.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="card-header">
+                        <button class="btn btn-link" data-bs-toggle="collapse" data-bs-target="#sonnet3" aria-expanded="false">
+                            End of Our Eternity by Daphne Carreon
+                        </button>
+                    </div>
+                    <div class="collapse" id="sonnet3">
+                        <div class="card-body">
+                            <p class="card-text">
+                                A lone star on eternity’s shore, my heart laid bare.
+                                <br>
+                                The ocean drips from my orbs, in rhythm with the tide.
+                                <br>
+                                Embraces I offered, but you forever denied.
+                                <br>
+                                My love, why do you flee? Your love, now a rare affair.
+                                <br>
+                                To gaze or to avoid, in your company, uncertainty is my air.
+                                <br>
+                                Your captivating beauty, now veiled in shadow’s guide,
+                                <br>
+                                The sparkle in your eyes, like an echo, slowly died.
+                                <br>
+                                Your presence there, a memory that once used to care.
+                                <br>
+                                <br>
+                                Like a sunset’s farewell, you slipped from my embrace.
+                                <br>
+                                Like a candle’s flame extinguished, your light swiftly vanished.
+                                <br>
+                                Yet in my night of gloom, your name echoes with grace.
+                                <br>
+                                With a shattered heart, your love weaves a decent lace.
+                                <br>
+                                Beneath the moon's cool caress, your comfort I still long wished,
+                                <br>
+                                Choosing you through the pain until Venus' last kiss in space.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="card-header">
+                        <button class="btn btn-link" data-bs-toggle="collapse" data-bs-target="#sonnet4" aria-expanded="false">
+                            Morning Farewell by Daphne Carreon
+                        </button>
+                    </div>
+                    <div class="collapse" id="sonnet4">
+                        <div class="card-body">
+                            <p class="card-text">
+                                In chambers veiled, your tales remain unsaid.
+                                <br>
+                                Its key suspended aloft, a height too steep at its peak.
+                                <br>
+                                Could it, just once, gently tread right over my head,
+                                <br>
+                                Revealing all the answers to the wonders I long seek?
+                                <br>
+                                <br>
+                                I bared my soul, yet your gaze craves our distant stroll.
+                                <br>
+                                Grant me empathy, for I tire of your hesitant fire.
+                                <br>
+                                In every corner of your cave, all I find is useless coal,
+                                <br>
+                                But for you, I will forever search for the rubies you desire.
+                                <br>
+                                <br>
+                                In "Please wait a while," I’ll still hold you tight like rubber,
+                                <br>
+                                Yet you stab your evident lies, leaving my heart bleeding.
+                                <br>
+                                Darling, the sun's morning rays are too bright this summer
+                                <br>
+                                For me to lose you and call this our ending.
+                                <br>
+                                <br>
+                                Broken promises believed, a fervent trust amassed,
+                                <br>
+                                Loved you above all, now yearn to break free at last.
+                            </p>
+                        </div>
+                    </div>
+                   <div class="card-header">
+                    <button class="btn btn-link" data-bs-toggle="collapse" data-bs-target="#sonnet5" aria-expanded="false">
+                        Moira’s Magnum Opus: Bliss Morphed to Grief by Euan Cruz
+                        </button>
+                    </div>
+                    <div class="collapse" id="sonnet5">
+                        <div class="card-body">
+                            <p class="card-text">
+                                Amidst the era of luminescent dreams, fate wove our way
+                                <br>
+                                Crafting the culmination of the existence of man
+                                <br>
+                                Yet Cupid's arrow wandered astray, fate's unpredictable span
+                                <br>
+                                In the ephemeral waltz of time, challenges sealed us away
+                                <br>
+                                My only act is to ponder if you're lost in a somber ballet
+                                <br>
+                                In fate's embroidery, reunion was grandiose plan
+                                <br>
+                                Dancing in the echoes of treasured hours, where it all began
+                                <br>
+                                Yet, no celestial grace stood witness, no predestined array
+                                <br>
+                                <br>
+                                Adversities painted a void, unfathomable and unseen
+                                <br>
+                                Murdering the symphony of our once-vibrant love
+                                <br>
+                                Consuming fragments from our hearts, a sinister threat
+                                <br>
+                                Breaking fate's scheme, the desire to restore what has been
+                                <br>
+                                To mend the fractures, reclaiming our merited love
+                                <br>
+                                Hold on, we were just 2 dumb kids, how did we forget?
+                            </p>
+                        </div>
+                    </div>
+                    <div class="card-header">
+                        <button class="btn btn-link" data-bs-toggle="collapse" data-bs-target="#sonnet6" aria-expanded="false">
+                            Wavering Bonds by Euan Cruz
+                        </button>
+                    </div>
+                    <div class="collapse" id="sonnet6">
+                        <div class="card-body">
+                            <p class="card-text">
+                                How do we dally in this fabric of togetherness?
+                                <br>
+                                Though our trust withdrawing like a sigh
+                                <br>
+                                A gloomy façade masking your genuineness
+                                <br>
+                                Mystery hiding your face, like clouds covering the sky
+                                <br>
+                                <br>
+                                Doubt spins: was it the timing or the wrong place?
+                                <br>
+                                I bestowed upon you the entirety of my hearts
+                                <br>
+                                Your absence of such whispers disgrace
+                                <br>
+                                The reason that we may find ourselves drifting apart
+                                <br>
+                                <br>
+                                Doubt, the singularity that devours our love
+                                <br>
+                                Fantasized about your occasional appearance
+                                <br>
+                                Please don't leave me, my one and only love
+                                <br>
+                                Though the odds favor your disappearance
+                                <br>
+                                <br>
+                                In the closing chapter, we may find ourselves alone
+                                <br>
+                                We'd never last like cheap cologne
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+ 
+<!-- footer -->
+<footer class="mt-4">
+    <div class="wrapper">
+        <i class="bfp-icon"></i>
+        <div class="footer-inner">
+            <div class="f-h-1">
+                <div class="col col-3">
+                    <img src="logo.png" alt="logo" style="width: 80%;">
+                </div>
+                <div class="col col-3">
+                    <ul>
+                        <li class="mb-3"><a href="index.html">HOME</a></li>
+                        <li class="mb-3"><a href="academics.html">ACADEMICS</a></li>
+                        <li class="mb-3"><a href="#campusmap">CAMPUS MAP</a></li>
+                        <li class="mb-3"><a href="#alumni">ALUMNI</a></li>
+                        </ul>
+                        <ul class="social-icons">
+                            <li class="social-item"><img src="fb.png" alt="Facebook"></li>
+                            <li class="social-item"><img src="twt.png" alt="Twitter"></li>
+                            <li class="social-item"><img src="ig.png" alt="Instagram"></li>
+                        </ul>
+                </div>
+                <div class="col col-3">
+                    <ul>
+                        <li class="mb-3"><a href="about.html">ABOUT</a></li>
+                        <li class="mb-3"><a href="contacts.html">CONTACT US</a></li>
+                        <li class="mb-3"><a href="#apply">APPLY</a></li>
+                        <li class="mb-3"><a href="#privacy">PRIVACY & TERMS</a></li>
+                        <li class="mb-3"><a href="#calendar">CALENDAR</a></li>
+                    </ul>
+                </div>
+                <div class="col col-3"></div>
+            </div>
+            <div class="bottom mt-4">COPYRIGHT © POTENS ACADEMY 2024 | WEB BY: CARREON CRUZ SORIO</div>
+        </div>
+    </div>
+</footer>
+
+</body>
+
+</html>
