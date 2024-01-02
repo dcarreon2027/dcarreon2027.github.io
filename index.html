@@ -568,10 +568,6 @@
 
 
     <script>
-       
-
-        $(document).ready(function() {
-            $('.imag<script>
     var swiper = new Swiper('.swiper-container', {
         scrollbar: {
             el: '.swiper-scrollbar',
@@ -579,29 +575,8 @@
         },
         slidesPerView: 'auto',
         spaceBetween: 10,
-    });e-row').each(function() {
-                var container = $(this);
-                var lastScrollTop = 0;
-
-                $(window).scroll(function() {
-                    var scrollTop = $(this).scrollTop();
-                    var rowTop = container.offset().top;
-                    var windowHeight = $(window).height();
-
-                    if (scrollTop > lastScrollTop && scrollTop > rowTop - windowHeight && scrollTop < rowTop + container.height()) {
-                        container.removeClass('transition-up');
-                    } else if (scrollTop < lastScrollTop && scrollTop > rowTop - windowHeight && scrollTop < rowTop + container.height()) {
-                        container.removeClass('transition-up');
-                    } else {
-                        container.addClass('transition-up');
-                    }
-
-                    lastScrollTop = scrollTop;
-                });
-            });
-        });
-
-    </script>
+    });
+</script>
 </body>
 
 </html>
